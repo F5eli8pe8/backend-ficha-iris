@@ -35,7 +35,14 @@ public class SecurityConfig {
 
                 .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/usuarios").permitAll()
-                .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/api-docs/**").permitAll()
+                .requestMatchers(
+                    "/swagger-ui.html",
+                    "/swagger-ui/**",
+                    "/api-docs",
+                    "/api-docs/**",
+                    "/v3/api-docs",
+                    "/v3/api-docs/**"
+                    ).permitAll()
 
                 // Rotas exclusivas do mestre
                 .requestMatchers("/api/usuarios/**").hasRole("MESTRE")
