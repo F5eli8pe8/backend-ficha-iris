@@ -1,12 +1,15 @@
-# Banco de dados
-spring.datasource.url=${DB_URL:jdbc:h2:mem:ficha;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE}
-spring.datasource.username=${DB_USERNAME:sa}
-spring.datasource.password=${DB_PASSWORD:}
-spring.datasource.driver-class-name=${DB_DRIVER:}
+spring.application.name=ficha
+
+# Banco de dados (Supabase - Session Pooler para redes IPv4)
+spring.datasource.url=jdbc:postgresql://aws-1-sa-east-1.pooler.supabase.com:5432/postgres?sslmode=require
+spring.datasource.username=postgres.SEU_PROJECT_REF
+spring.datasource.password=SUA_SENHA_AQUI
+spring.datasource.driver-class-name=org.postgresql.Driver
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 spring.jpa.open-in-view=false
 
 springdoc.api-docs.path=/api-docs
